@@ -1,0 +1,17 @@
+{
+    "orders": [
+        {
+            "id": "ORD-20250303235534",
+            "table": "Table 4",
+            "customer": "Floyd Miles",
+            "items": 2,
+            "subtotal": 13.98,
+            "tax": 0.7,
+            "total": 14.68,
+            "status": "Pending",
+            "timestamp": "2025-03-03T23:55:34.079722",
+            "kitchen": "Kitchen",
+            "paymentMethod": "cash"
+        }
+    ]
+}

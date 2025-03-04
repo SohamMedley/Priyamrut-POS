@@ -1,0 +1,118 @@
+{
+  "categories": [
+    { "icon": "star", "label": "All", "itemCount": "15 Items", "active": true },
+    { "icon": "fire", "label": "Diwali", "itemCount": "6 Items" },
+    { "icon": "fill-drip", "label": "Holi", "itemCount": "3 Items" },
+    { "icon": "om", "label": "Ganesh Chaturthi", "itemCount": "2 Items" },
+    { "icon": "sun", "label": "Gudi Padwa", "itemCount": "2 Items" },
+    { "icon": "feather", "label": "Makar Sankranti", "itemCount": "2 Items" }
+  ],
+  "foodItems": [
+    {
+      "image": "/static/images/food1.jpg",
+      "title": "Chakali",
+      "price": 6.99,
+      "type": "Veg",
+      "category": "Diwali"
+    },
+    {
+      "image": "/static/images/food2.jpg",
+      "title": "Chivda",
+      "price": 4.99,
+      "type": "Veg",
+      "category": "Diwali"
+    },
+    {
+      "image": "/static/images/food3.jpg",
+      "title": "Karanji (Gujiya)",
+      "price": 7.49,
+      "type": "Veg",
+      "category": "Diwali"
+    },
+    {
+      "image": "/static/images/food4.jpg",
+      "title": "Laadoo",
+      "price": 5.49,
+      "discount": 10,
+      "type": "Veg",
+      "category": "Diwali"
+    },
+    {
+      "image": "/static/images/food5.jpg",
+      "title": "Vadi (Vadya)",
+      "price": 3.99,
+      "type": "Veg",
+      "category": "Diwali"
+    },
+    {
+      "image": "/static/images/food6.jpg",
+      "title": "Anarse",
+      "price": 8.99,
+      "type": "Veg",
+      "category": "Diwali"
+    },
+    {
+      "image": "/static/images/food1.jpg",
+      "title": "Puran Poli",
+      "price": 9.99,
+      "type": "Veg",
+      "category": "Holi"
+    },
+    {
+      "image": "/static/images/food2.jpg",
+      "title": "Gujiya (Sweet Dumpling)",
+      "price": 7.99,
+      "type": "Veg",
+      "category": "Holi"
+    },
+    {
+      "image": "/static/images/food3.jpg",
+      "title": "Thandai",
+      "price": 4.99,
+      "type": "Veg",
+      "category": "Holi"
+    },
+    {
+      "image": "/static/images/food4.jpg",
+      "title": "Modak (Fried)",
+      "price": 6.49,
+      "type": "Veg",
+      "category": "Ganesh Chaturthi"
+    },
+    {
+      "image": "/static/images/food5.jpg",
+      "title": "Ukadiche Modak",
+      "price": 7.49,
+      "type": "Veg",
+      "category": "Ganesh Chaturthi"
+    },
+    {
+      "image": "/static/images/food6.jpg",
+      "title": "Shrikhand",
+      "price": 8.99,
+      "type": "Veg",
+      "category": "Gudi Padwa"
+    },
+    {
+      "image": "/static/images/food1.jpg",
+      "title": "Kokum Sarbat",
+      "price": 3.49,
+      "type": "Veg",
+      "category": "Gudi Padwa"
+    },
+    {
+      "image": "/static/images/food2.jpg",
+      "title": "Tilgul Laddu",
+      "price": 4.49,
+      "type": "Veg",
+      "category": "Makar Sankranti"
+    },
+    {
+      "image": "/static/images/food3.jpg",
+      "title": "Gul Poli",
+      "price": 5.99,
+      "type": "Veg",
+      "category": "Makar Sankranti"
+    }
+  ]
+}
