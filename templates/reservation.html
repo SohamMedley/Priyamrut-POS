@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Reservation{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <main class="page-content">
+    <h2>Reservation</h2>
+    <p>Book a table in advance:</p>
+    <div class="info-card">
+      <form>
+        <label for="res-name">Name:</label><br>
+        <input type="text" id="res-name" name="res-name"><br><br>
+        <label for="res-date">Date & Time:</label><br>
+        <input type="datetime-local" id="res-date" name="res-date"><br><br>
+        <label for="res-guests">No. of Guests:</label><br>
+        <input type="number" id="res-guests" name="res-guests" min="1"><br><br>
+        <button type="submit">Reserve</button>
+      </form>
+    </div>
+    <p style="margin-top:1rem; opacity:0.7;">(Placeholder UI for reservations.)</p>
+  </main>
+</div>
+{% endblock %}

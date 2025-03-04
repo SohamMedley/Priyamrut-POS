@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+{% block title %}Priyamrut POS - Menu{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <main class="menu-section">
+    <!-- Category Filter -->
+    <div class="category-filter">
+      {% for category in categories %}
+      <div class="category-item {% if category.active %}active{% endif %}">
+        <i class="fas fa-{{ category.icon }}"></i>
+        <span class="category-name">{{ category.label }}</span>
+        <span class="item-count">{{ category.itemCount }}</span>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Dining Mode Selection -->
+    <div class="dining-mode">
+      <button class="mode-btn active">Dine in</button>
+      <button class="mode-btn">Take Away</button>
+      <button class="mode-btn">Delivery</button>
+    </div>
+
+    <!-- Food Grid -->
+    <div class="food-grid">
+      {% for item in foodItems %}
+      <div class="food-card"
+           data-id="{{ loop.index }}"
+           data-title="{{ item.title }}"
+           data-price="{{ item.price }}"
+           data-type="{{ item.type }}"
+           data-category="{{ item.category }}">
+        <div class="food-image">
+          <img src="{{ item.image }}" alt="{{ item.title }}">
+          {% if item.discount %}
+          <div class="discount-badge">{{ item.discount }}% Off</div>
+          {% endif %}
+        </div>
+        <div class="food-details">
+          <h3 class="food-title">{{ item.title }}</h3>
+          <div class="food-meta">
+            <span class="food-price">${{ "%.2f"|format(item.price) }}</span>
+            <div class="food-type">
+              <span class="type-indicator {{ 'veg' if item.type == 'Veg' else 'non-veg' }}"></span>
+              <span class="type-text">{{ item.type }}</span>
+            </div>
+          </div>
+          <div class="quantity-control">
+            <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+            <span class="qty-value">0</span>
+            <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+
+  <!-- Cart Section -->
+  <div class="cart-section">
+    <div class="cart-header">
+      <div>
+        <h2>Table 4</h2>
+        <p>Floyd Miles</p>
+      </div>
+      <button class="edit-btn">
+        <i class="fas fa-edit"></i>
+      </button>
+    </div>
+    
+    <div class="cart-dining-mode">
+      <button class="mode-btn active">Dine in</button>
+      <button class="mode-btn">Take Away</button>
+      <button class="mode-btn">Delivery</button>
+    </div>
+    
+    <div class="cart-items" id="cart-items">
+      <!-- Cart items will be added dynamically with JavaScript -->
+    </div>
+    
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span>Sub Total</span>
+        <span id="subtotal">$0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax 5%</span>
+        <span id="tax">$0.00</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total Amount</span>
+        <span id="total">$0.00</span>
+      </div>
+    </div>
+    
+    <!-- Payment method selection (no redirect) -->
+    <div class="payment-methods">
+      <button class="payment-btn">
+        <i class="fas fa-money-bill"></i>
+        <span>Cash</span>
+      </button>
+      <button class="payment-btn">
+        <i class="fas fa-credit-card"></i>
+        <span>Credit/Debit Card</span>
+      </button>
+      <button class="payment-btn">
+        <i class="fas fa-qrcode"></i>
+        <span>QR Code</span>
+      </button>
+    </div>
+    
+    <button class="place-order-btn">Place Order</button>
+  </div>
+</div>
+
+<!-- Footer with Orders -->
+<footer class="footer">
+  {% for order in orders %}
+  <div class="order-card {% if order.status %}processing{% endif %}">
+    <div class="order-table">{{ order.table }}</div>
+    <div class="order-details">
+      <div class="order-info">{{ order.items }} Items → {{ order.kitchen }}</div>
+      <div class="order-status">
+        Payment: {{ order.paymentMethod|capitalize }}
+        {% if order.status %}
+         | {{ order.status }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</footer>
+{% endblock %}

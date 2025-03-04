@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Priyamrut POS{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="pos-container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="/static/images/logo.jpg" alt="Priyamrut Logo">
+        <span>PRIYAMRUT POS</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="/" class="nav-item {% if active_page == 'menu' %}active{% endif %}">
+          <i class="fas fa-utensils"></i>
+          <span>Menu</span>
+        </a>
+        <a href="/table-services" class="nav-item {% if active_page == 'table' %}active{% endif %}">
+          <i class="fas fa-table"></i>
+          <span>Table Services</span>
+        </a>
+        <a href="/reservation" class="nav-item {% if active_page == 'reservation' %}active{% endif %}">
+          <i class="fas fa-calendar"></i>
+          <span>Reservation</span>
+        </a>
+        <a href="/delivery" class="nav-item {% if active_page == 'delivery' %}active{% endif %}">
+          <i class="fas fa-truck"></i>
+          <span>Delivery</span>
+        </a>
+        <a href="/accounting" class="nav-item {% if active_page == 'accounting' %}active{% endif %}">
+          <i class="fas fa-calculator"></i>
+          <span>Accounting</span>
+        </a>
+        <a href="/settings" class="nav-item {% if active_page == 'settings' %}active{% endif %}">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <a href="/logout" class="nav-item logout">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </a>
+    </div>
+
+    <div class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <div class="search-container">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search Product here...">
+        </div>
+        <div class="table-info">
+          <span class="table-number">Table 4</span>
+          <span class="customer-name">Floyd Miles</span>
+        </div>
+        <button class="share-btn">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </header>
+
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

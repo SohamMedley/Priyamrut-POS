@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %}Accounting{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <main class="page-content">
+    <h2>All Orders</h2>
+    {% if orders %}
+    <table border="1" cellpadding="8" style="border-collapse: collapse; margin-top:1rem;">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Table</th>
+          <th>Customer</th>
+          <th>Items</th>
+          <th>Subtotal</th>
+          <th>Tax</th>
+          <th>Total</th>
+          <th>Payment Method</th>
+          <th>Status</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.table }}</td>
+          <td>{{ order.customer }}</td>
+          <td>{{ order.items }}</td>
+          <td>${{ "%.2f"|format(order.subtotal) }}</td>
+          <td>${{ "%.2f"|format(order.tax) }}</td>
+          <td>${{ "%.2f"|format(order.total) }}</td>
+          <td>{{ order.paymentMethod|capitalize }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.timestamp }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p style="margin-top:1rem;">No orders have been placed yet.</p>
+    {% endif %}
+  </main>
+</div>
+{% endblock %}

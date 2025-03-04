@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}Payment{% endblock %}
+
+{% block content %}
+<div style="padding: 2rem;">
+  <h2>Payment Method: {{ method|capitalize }}</h2>
+  <p>This is a placeholder page to handle {{ method }} payments.</p>
+  <p>In a real app, you could show a payment form, a QR code, or finalize the order here.</p>
+</div>
+{% endblock %}
